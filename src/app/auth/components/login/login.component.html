@@ -1,0 +1,20 @@
+<h1 class="title">Login</h1>
+
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input formControlName="name" class="input" type="text" placeholder="username" />
+    </div>
+    <p *ngIf="displayError('name')" class="help is-danger">This field is required</p>
+  </div>
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input formControlName="password" class="input" type="password" placeholder="password" />
+    </div>
+    <p *ngIf="displayError('password')" class="help is-danger">This field is required</p>
+  </div>
+
+  <button class="button is-primary" type="submit">Sign in</button>
+</form>
