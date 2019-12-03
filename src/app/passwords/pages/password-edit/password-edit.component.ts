@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Password } from '../../models/password.class';
 
 @Component({
   selector: 'pm-password-edit',
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password-edit.component.scss']
 })
 export class PasswordEditComponent implements OnInit {
-  constructor() {}
+  password: Password;
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.password = this.route.snapshot.data['passwordData'];
+  }
 }

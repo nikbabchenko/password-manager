@@ -48,7 +48,7 @@ export class PasswordsService {
     return of(this.passwordsList);
   }
 
-  getById(id: number) {
+  getById(id: number): Password {
     return this.passwordsList.find(item => item.id === id);
   }
 }

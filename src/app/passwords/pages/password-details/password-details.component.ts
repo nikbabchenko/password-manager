@@ -16,5 +16,6 @@ export class PasswordDetailsComponent implements OnInit {
   ngOnInit() {
     const passwordId = this.route.snapshot.paramMap.get('id');
     this.password = this.passwordService.getById(+passwordId);
+    console.log('--data.title', this.route.snapshot.data['title']);
   }
 }
