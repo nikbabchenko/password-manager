@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { ModalComponent } from './shared/modal/modal.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'modal',
     component: ModalComponent,
     outlet: 'popup'
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
