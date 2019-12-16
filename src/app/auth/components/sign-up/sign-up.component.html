@@ -1,0 +1,54 @@
+<h1 class="title">Sing Up</h1>
+
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="singUpForm">
+  <div class="field">
+    <label for="firstName" class="label">First Name</label>
+    <div class="control">
+      <input id="firstName" formControlName="firstName" class="input" type="text" placeholder="First Name" />
+    </div>
+    <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="firstName"></pm-form-error-message>
+  </div>
+  <div class="field">
+    <label for="lastName" class="label">Last Name</label>
+    <div class="control">
+      <input id="lastName" formControlName="lastName" class="input" type="text" placeholder="lastName" />
+    </div>
+    <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="lastName"></pm-form-error-message>
+  </div>
+  <div class="field">
+    <label for="email" class="label">Email</label>
+    <div class="control">
+      <input id="email" formControlName="email" class="input" type="text" placeholder="email" />
+    </div>
+    <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="email"></pm-form-error-message>
+  </div>
+
+  <div formGroupName="passwordGroup">
+    <div class="field">
+      <label for="password" class="label">Password</label>
+      <div class="control">
+        <input id="password" formControlName="password" class="input" type="password" placeholder="password" />
+      </div>
+      <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="passwordGroup.password"></pm-form-error-message>
+    </div>
+    <div class="field">
+      <label for="confirmPassword" class="label">Confirm Password</label>
+      <div class="control">
+        <input id="confirmPassword" formControlName="confirmPassword" class="input" type="password" placeholder="Confirm Password" />
+      </div>
+      <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="passwordGroup.confirmPassword"></pm-form-error-message>
+    </div>
+  </div>
+
+  <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="passwordGroup"></pm-form-error-message>
+
+  <div class="field">
+    <label class="checkbox" for="accept-privacy-policy">Accept Privacy Policy</label>
+    <div class="control">
+      <input id="accept-privacy-policy" formControlName="acceptPrivacyPolicy" type="checkbox" />
+    </div>
+    <pm-form-error-message [form]="singUpForm" [errors]="errors" nameField="acceptPrivacyPolicy"></pm-form-error-message>
+  </div>
+
+  <button [attr.disabled]="!singUpForm.valid ? 'disabled' : null" class="button is-primary" type="submit">Sign up</button>
+</form>
