@@ -32,6 +32,13 @@ export class AuthService {
     this.isLoggedIn$.next(isLoggedIn);
   }
 
+  singUp() {
+    return of(true).pipe(
+      delay(300),
+      tap(() => (this.isLoggedIn = true))
+    );
+  }
+
   login() {
     return of(true).pipe(
       delay(300),
