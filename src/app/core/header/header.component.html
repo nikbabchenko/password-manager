@@ -23,7 +23,7 @@
       <div class="navbar-item">
         <div class="buttons">
           <ng-container *ngIf="!authService.isLoggedIn; else logoutTemplate">
-            <a class="button is-primary">
+            <a [routerLink]="['/sing-up']" class="button is-primary">
               <strong>Sign up</strong>
             </a>
             <a routerLinkActive="is-active" routerLink="/login" class="button is-light">

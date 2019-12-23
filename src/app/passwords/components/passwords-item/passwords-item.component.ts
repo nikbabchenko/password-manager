@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pm-passwords-item',
@@ -8,7 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PasswordsItemComponent implements OnInit {
   @Input()
   password;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  getLink(id: number) {
+    return `/passwords/${id}`;
+  }
 }

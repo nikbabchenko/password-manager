@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, from } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Password } from '../models/password.class';
 
 const passwords = [
@@ -50,5 +51,13 @@ export class PasswordsService {
 
   getById(id: number): Password {
     return this.passwordsList.find(item => item.id === id);
+  }
+
+  updatePassword(updatedPassword) {
+    this.passwordsList.forEach((value, index, array) => {
+      if (value.id === updatedPassword.id) {
+        array[index] = updatedPassword;
+      }
+    });
   }
 }
