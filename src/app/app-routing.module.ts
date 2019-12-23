@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/guards/auth.guard';
-import { ModalComponent } from './shared/modal/modal.component';
+import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 
 const routes: Routes = [
@@ -20,11 +19,6 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-  },
-  {
-    path: 'modal',
-    component: ModalComponent,
-    outlet: 'popup'
   },
   {
     path: '**',
